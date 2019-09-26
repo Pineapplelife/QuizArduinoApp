@@ -19,11 +19,11 @@ export class QuizService {
 	}	
 
 	saveQuiz(){
-		firebase.database().ref('/questions').set(this.questions);
+		firebase.database().ref('/quiz').set(this.questions);
 	}
 
 	getQuiz() {
-		firebase.database().ref('/questions').on(
+		firebase.database().ref('/quiz').on(
 			'value', (data: DataSnapshot) => {
 				this.questions = data.val() ? data.val() : [];
 				this.sendQuiz();
@@ -34,7 +34,7 @@ export class QuizService {
 	getSingleQuestion(id: number){
 		return new Promise(
 			(resolve, reject) => {
-				firebase.database().ref('/questions' + id).once('value').then(
+				firebase.database().ref('/quiz' + id).once('value').then(
 					(data: DataSnapshot) => {
 						resolve(data.val());
 					},

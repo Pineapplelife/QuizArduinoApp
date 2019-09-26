@@ -26,11 +26,12 @@ export class QuizFormComponent implements OnInit {
     });
   }
 
-  onSaveQuestion(){
+  onSaveQuiz(){
     const question = this.quizForm.get('question').value;
     const reponse = this.quizForm.get('reponse').value;
     const newQuestion = new Quiz(question, reponse);
     this.quizService.createNewQuestion(newQuestion);
+    this.router.navigate(['/quiz']);
   }
 
 }

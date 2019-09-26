@@ -11,6 +11,8 @@ import { QuizComponent } from './quiz/quiz.component';
 import { QuizFormComponent } from './quiz/quiz-form/quiz-form.component';
 import { SingleQuizComponent } from './quiz/single-quiz/single-quiz.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { HeaderComponent } from './header/header.component';
+import { QuizService } from './services/quiz.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
     QuizComponent,
     QuizFormComponent,
     SingleQuizComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,9 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    QuizService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

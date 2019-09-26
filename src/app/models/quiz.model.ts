@@ -1,6 +1,6 @@
 
 export class Quiz {
 
-    constructor(public question : string, reponse: boolean){}
+    constructor(public question : string, public reponse: boolean){}
     
 }

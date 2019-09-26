@@ -1,1 +1,6 @@
-<p>single-quiz works!</p>
+<div class="container">
+    <h1>{{ question.question }}</h1>
+    <h3>{{ question.reponse }}</h3>
+    <button class="btn btn-outline-primary" (click)="sendToArduino()">Envoyer à l'Arduino</button>
+    <button class="btn btn-default" (click)="onBack()">Retour</button>
+</div>
