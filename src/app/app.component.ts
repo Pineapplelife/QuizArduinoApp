@@ -8,6 +8,8 @@ import * as firebase from 'firebase';
 })
 export class AppComponent {
 
+	arduino: boolean;
+
 	constructor() {
 		const firebaseConfig = {
 			apiKey: "AIzaSyDOhxtsDlSPh1bHOzGoGetliXPKOcEWxqI",

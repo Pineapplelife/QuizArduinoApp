@@ -1,23 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { QuizService } from '../services/quiz.service';
+import { AppComponent } from '../app.component';
+import { from } from 'rxjs';
 
 @Component({
-  selector: 'app-arduino-json',
-  templateUrl: './arduino-json.component.html',
-  styleUrls: ['./arduino-json.component.scss']
+	selector: 'app-arduino-json',
+	templateUrl: './arduino-json.component.html',
+	styleUrls: ['./arduino-json.component.scss']
 })
-export class ArduinoJSONComponent implements OnInit {
+export class ArduinoJSONComponent implements OnInit, OnDestroy {
 
-  json;
+	json;
 
-  constructor(private quizService: QuizService) { }
+	constructor(private quizService: QuizService, private appComponent: AppComponent) { }
 
-  ngOnInit() {
-    this.arduinoWantJson();
-  }
+	ngOnInit() {
+		this.appComponent.arduino = true;
+		this.arduinoWantJson();
+	}
 
-  arduinoWantJson(){
-    this.json = this.quizService.getJson();
-  }
+	arduinoWantJson() {
+		this.json = this.quizService.getJson();
+	}
+
+	ngOnDestroy() {
+		this.appComponent.arduino = false;
+	}
 
 }
