@@ -5,6 +5,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { QuizFormComponent } from './quiz/quiz-form/quiz-form.component';
 import { SingleQuizComponent } from './quiz/single-quiz/single-quiz.component';
+import { ArduinoJSONComponent } from './arduino-json/arduino-json.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent },
   { path: 'quiz/view/:id', component: SingleQuizComponent },
   { path: 'form', component: QuizFormComponent },
+  { path: 'ArduinoJSON', component: ArduinoJSONComponent },
   { path: '', component: HomeComponent },
   { path: 'not-found', component: FourOhFourComponent },
   { path: '**', redirectTo: 'not-found' }

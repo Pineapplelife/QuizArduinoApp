@@ -1,10 +1,10 @@
 <div>
     <legend>CODING QUIZ</legend><br>
     <div *ngFor="let question of questions; let i = index" style="margin: 2%;">
-        <p>{{ questions.question }}</p>
-        <button class="btn btn-outline-success" (click)="onGame(i, true); response = true">VRAI</button>
-        <button class="btn btn-outline-danger" (click)="onGame(i, false); response = true" style="margin-left: 25px;">FAUX</button><br><br>
-        <input type="text" [(ngModel)]="result" readonly><br><br>
-        <button class="btn btn-sm btn-primary" (click)="onViewQuestion(i)">Voir la question</button>
+        <p>{{ questions[i].question }}</p>
+        <button class="btn btn-outline-success" (click)="onGame(i, 'true')">VRAI</button>
+        <button class="btn btn-outline-danger" (click)="onGame(i, 'false')" style="margin-left: 25px;">FAUX</button><br><br>
+        <button class="btn btn-primary btn-sm" (click)="onSendToArduino(i)">Envoyer à Arduino</button>
+        <!--<button class="btn btn-sm btn-primary" (click)="onViewQuestion(i)">Voir la question</button>-->
     </div>
 </div>

@@ -13,6 +13,7 @@ import { SingleQuizComponent } from './quiz/single-quiz/single-quiz.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HeaderComponent } from './header/header.component';
 import { QuizService } from './services/quiz.service';
+import { ArduinoJSONComponent } from './arduino-json/arduino-json.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { QuizService } from './services/quiz.service';
     QuizFormComponent,
     SingleQuizComponent,
     FourOhFourComponent,
-    HeaderComponent
+    HeaderComponent,
+    ArduinoJSONComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ export class QuizService {
 
 	questions: Quiz[] = [];
 	quizSubject = new Subject<Quiz[]>();
+	json;
 
 	constructor() {
 		this.getQuiz();
@@ -65,5 +66,13 @@ export class QuizService {
 		this.saveQuiz();
 	}
 
+	
+	onGetJson(json){
+		this.json = json;
+	}
+
+	getJson(){
+		return this.json;
+	}
 
 }

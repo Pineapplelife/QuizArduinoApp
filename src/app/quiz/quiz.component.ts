@@ -13,7 +13,7 @@ export class QuizComponent implements OnInit, OnDestroy {
 
 	questions: Quiz[];
 	quizSubscription: Subscription;
-	response: string;
+	result: string;
 
 	constructor(private quizService: QuizService, private router: Router) { }
 
@@ -27,17 +27,24 @@ export class QuizComponent implements OnInit, OnDestroy {
 	}
 
 	onViewQuestion(id: number){
-		this.router.navigate(['/quiz', '/view', id])
+		this.router.navigate(['/quiz', 'view', id]);
 	}
 
 	onGame(index, reponse: boolean) {
-		if (this.questions[index].reponse === reponse){
-			this.response = 'YOU WIN';
+		if (reponse === this.questions[index].reponse){
+			alert('YOU WIN');
 		}
-		else {
-			this.response = 'You failed';
+		else if(reponse !== this.questions[index].reponse) {
+			alert('You failed');
 		}
 	}
+
+	onSendToArduino(index: number){
+		var json = JSON.stringify(this.questions[index]);
+		this.quizService.onGetJson(json);
+		this.router.navigate(['/ArduinoJSON']);
+	}
+
 	  
 	ngOnDestroy(){
 		this.quizSubscription.unsubscribe();
