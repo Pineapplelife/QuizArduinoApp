@@ -66,13 +66,4 @@ export class QuizService {
 		this.saveQuiz();
 	}
 
-	
-	onGetJson(json){
-		this.json = json;
-	}
-
-	getJson(){
-		return this.json;
-	}
-
 }

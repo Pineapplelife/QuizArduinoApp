@@ -39,11 +39,6 @@ export class QuizComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onSendToArduino(index: number){
-		var json = JSON.stringify(this.questions[index]);
-		this.quizService.onGetJson(json);
-		this.router.navigate(['/ArduinoJSON']);
-	}
 
 	  
 	ngOnDestroy(){

@@ -20,7 +20,8 @@ export class ArduinoJSONComponent implements OnInit, OnDestroy {
 	}
 
 	arduinoWantJson() {
-		this.json = this.quizService.getJson();
+		this.quizService.getQuiz();
+		this.json = this.quizService.questions;
 	}
 
 	ngOnDestroy() {
